@@ -4,6 +4,13 @@
   "data":
   [
    {
+    "ID":"I",
+    "KEY":"001",
+    "LANG":"E",
+    "ENTRY":"test",
+    "LENGTH":14
+   },
+   {
     "ID":"R",
     "KEY":"",
     "LANG":"E",
