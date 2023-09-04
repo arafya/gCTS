@@ -7,3 +7,4 @@ REPORT ZTEST_GCTS2.
 
 "Test 7th
 "Test 8th
+"Test 9th
