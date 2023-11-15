@@ -13,7 +13,7 @@ REPORT ZTEST_GCTS2.
 "Test 12th
 "Test 13th
 "Test 14th
-"Test 15th
+write 'Toto'.
 "Test 16th feature
 "Test 16th bug 1
 "Test 16th bug 3
