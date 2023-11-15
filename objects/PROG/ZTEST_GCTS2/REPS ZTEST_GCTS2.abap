@@ -14,7 +14,7 @@ REPORT ZTEST_GCTS2.
 "Test 13th
 "Test 14th
 "Test 15th
-"Test 16th feature
+"Test 16th feature conflict
 "Test 16th bug 1
 "Test 16th bug 3
 "Test 16th bug 1 prime
