@@ -17,7 +17,7 @@ REPORT ZTEST_GCTS2.
 "Test 16th feature conflict
 "Test 16th bug 1
 "Test 16th bug 3
-"Test 16th bug 20
-"Test 17th bug 2
+"Test 16th feature 21
+"Test 17th confilts
 "Test 18th bug 3
 "Test 19th bug 4
