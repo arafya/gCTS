@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const root = './src/'
 
-const isClass = file => {
+const isClass = file => { 
     const regex = /clas.abap/
     return file.match(regex) ? true : false
 }
