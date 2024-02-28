@@ -3,5 +3,6 @@
       rv_message = 'Hello World'.
     ELSE.
       rv_message = 'Bonjour tout le monde'.
+
     ENDIF.
   ENDMETHOD.
