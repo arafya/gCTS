@@ -16,7 +16,7 @@ jobs:
       - name: Run ATC checks
         uses: SAP/project-piper-action@master
         with:
-          command: atcCheck
+          command: abapEnvironmentRunATCCheck
           endpoint: ${{ secrets.SAP_ENDPOINT }}
           client: ${{ secrets.SAP_CLIENT }}
           user: ${{ secrets.SAP_USER }}
@@ -25,7 +25,7 @@ jobs:
       - name: Run AUnit tests
         uses: SAP/project-piper-action@master
         with:
-          command: aunitRun
+          command: abapEnvironmentRunAUnitTest 
           endpoint: ${{ secrets.SAP_ENDPOINT }}
           client: ${{ secrets.SAP_CLIENT }}
           user: ${{ secrets.SAP_USER }}
