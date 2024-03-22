@@ -1,32 +1,16 @@
-name: SAP Pipeline
-
+name: CI
 on:
   push:
-    branches:
-      - main
-
 jobs:
-  run_tests:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run ATC checks
+      - uses: actions/checkout@v2
+      - name:  Run ATC checks
         uses: SAP/project-piper-action@master
         with:
           command: gctsExecuteABAPQualityChecks
-          endpoint: ${{ secrets.SAP_ENDPOINT }}
-          client: ${{ secrets.SAP_CLIENT }}
-          user: ${{ secrets.SAP_USER }}
-          password: ${{ secrets.SAP_PASSWORD }}
-
       - name: Run AUnit tests
         uses: SAP/project-piper-action@master
         with:
           command: gctsExecuteABAPUnitTests
-          endpoint: ${{ secrets.SAP_ENDPOINT }}
-          client: ${{ secrets.SAP_CLIENT }}
-          user: ${{ secrets.SAP_USER }}
-          password: ${{ secrets.SAP_PASSWORD }}
