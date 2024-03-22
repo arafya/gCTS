@@ -1,16 +1,32 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: SAP Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  build:
+  run_tests:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: dktunited/.github/.github/workflows/build-maven-docker.yaml@v0
-      - name: mavenBuild
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run ATC checks
         uses: SAP/project-piper-action@master
         with:
-          command: mavenBuild
-      - name: mavenExecuteStaticCodeChecks
+          command: atcCheck
+          endpoint: ${{ secrets.SAP_ENDPOINT }}
+          client: ${{ secrets.SAP_CLIENT }}
+          user: ${{ secrets.SAP_USER }}
+          password: ${{ secrets.SAP_PASSWORD }}
+
+      - name: Run AUnit tests
         uses: SAP/project-piper-action@master
         with:
-          command: mavenExecuteStaticCodeChecks
+          command: aunitRun
+          endpoint: ${{ secrets.SAP_ENDPOINT }}
+          client: ${{ secrets.SAP_CLIENT }}
+          user: ${{ secrets.SAP_USER }}
+          password: ${{ secrets.SAP_PASSWORD }}
